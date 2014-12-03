@@ -1,9 +1,30 @@
 // this is all user-related javascript
 
-Template.userItem.helpers({
-  circle: function() {
-    console.log(this)
-        var svg = d3.select("body").append("svg")
+//Template.userItem.helpers({
+//  circle: function() {
+//    console.log(this)
+//        var svg = d3.select("body").append("svg")
+//        var circle = svg.selectAll("circle")
+//                        .data([0])
+//                        .enter()
+//                        .append("circle");
+//        circle.attr("r", 10)
+//              .attr("cx", 20)
+//              .attr("cy", 20)
+//              .attr("fill", "blue")
+//    }
+//})
+
+//  <h3>
+//    {{#each emails}}
+//      {{this.address}}
+//    {{/each}}
+//  </h3>
+
+
+Template.userItem.rendered = function() {
+  
+        var svg = d3.select("#circle").append("svg")
         var circle = svg.selectAll("circle")
                         .data([0])
                         .enter()
@@ -13,7 +34,6 @@ Template.userItem.helpers({
               .attr("cy", 20)
               .attr("fill", "blue")
     }
-})
 
 Template.usersList.helpers({
   // try doing all of the filtering
@@ -25,3 +45,5 @@ Template.usersList.helpers({
     return Meteor.users.find({_id: removeCurrentUser })
   }
 })
+
+
