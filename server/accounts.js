@@ -6,8 +6,8 @@ Meteor.startup(function() {
   if (Meteor.users.find().count() === 0) {
     Accounts.createUser({
       'username': 'Dr. Jones', 
-      'email': 'indianajones@oxford.edu',
-      'password': 'password',
+      'email': 'indy@o.e',
+      'password': 'pwd',
       'profile': {
         'role':'admin'
       }
