@@ -23,17 +23,19 @@
 
 
 Template.userItem.rendered = function() {
-  
-        var svg = d3.select("#circle").append("svg")
-        var circle = svg.selectAll("circle")
-                        .data([0])
-                        .enter()
-                        .append("circle");
-        circle.attr("r", 10)
-              .attr("cx", 20)
-              .attr("cy", 20)
-              .attr("fill", "blue")
-    }
+  var status = this.data.profile.status
+  Tracker.autorun(function() {
+    var svg = d3.select("#circle").append("svg")
+    var circle = svg.selectAll("circle")
+                    .data([0])
+                    .enter()
+                    .append("circle");
+    circle.attr("r", 10)
+          .attr("cx", 20)
+          .attr("cy", 20)
+          .attr("fill", status);
+  });
+}
 
 Template.usersList.helpers({
   // try doing all of the filtering
