@@ -1,4 +1,3 @@
-
 <template name="userItem">
   {{circle}}
   <h3>
@@ -8,6 +7,11 @@
   </h3>
 </template>
 
+<template name="usersList">
+  {{#each users}}
+    {{> userItem}}
+  {{/each}}
+</template>
 
 
 
